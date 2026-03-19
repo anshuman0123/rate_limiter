@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # RLaaS — Rate Limiter as a Service
 
 A lightweight, production-ready rate limiting service built with FastAPI and Redis. Drop it in front of any backend to protect your API from abuse.
@@ -29,7 +28,7 @@ Three common rate limiting algorithms exist — fixed window, sliding window log
 - **Sustained rate** — controlled by `refill_rate` (tokens per second)
 - **Burst allowance** — controlled by `capacity` (max tokens in bucket)
 
-A user with `capacity=10, refill_rate=0.33` can fire 10 requests instantly if they saved up, but cannot sustain more than ~20 requests per minute long term. This matches how real API usage looks — occasional bursts are fine, sustained hammering is not.
+A user with `capacity=10, refill_rate=0.33` can fire 10 requests instantly if they've saved up, but cannot sustain more than ~20 requests per minute long-term. This matches how real API usage looks — occasional bursts are fine, sustained hammering is not.
 
 ---
 
@@ -58,11 +57,11 @@ Redis runs Lua scripts atomically — nothing else can execute between the read 
 
 ## Quick start
 
-**Prerequisites:** Python 3.10+, Redis running on localhost:6379
+**Prerequisites:** Python 3.10+, Redis running on `localhost:6379`
 
 ```bash
-git clone https://github.com/yourusername/rlaas
-cd rlaas
+git clone https://github.com/anshuman0123/rate_limiter
+cd rate_limiter
 pip install fastapi uvicorn redis
 uvicorn main:app --reload
 ```
@@ -103,7 +102,7 @@ curl "http://localhost:8000/check-limit?user_id=alice&capacity=10&refill_rate=0.
 
 ## Refill rate cheatsheet
 
-| Use case | refill_rate |
+| Use case | `refill_rate` |
 |---|---|
 | 1 request every 3 seconds | `0.33` |
 | 1 request per second | `1.0` |
@@ -127,10 +126,6 @@ curl "http://localhost:8000/check-limit?user_id=alice&capacity=10&refill_rate=0.
 ## Project structure
 
 ```
-rlaas/
+rate_limiter/
 └── main.py   # entire service, ~30 lines
 ```
-=======
-# rate_limiter
-demonstration of how rate limiter works , using bucket refilling strategy , using redis backend
->>>>>>> ab720336e7021844c5ee9981776a21b916f18e2b
