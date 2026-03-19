@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RLaaS — Rate Limiter as a Service
 
 A lightweight, production-ready rate limiting service built with FastAPI and Redis. Drop it in front of any backend to protect your API from abuse.
@@ -129,3 +130,7 @@ curl "http://localhost:8000/check-limit?user_id=alice&capacity=10&refill_rate=0.
 rlaas/
 └── main.py   # entire service, ~30 lines
 ```
+=======
+# rate_limiter
+demonstration of how rate limiter works , using bucket refilling strategy , using redis backend
+>>>>>>> ab720336e7021844c5ee9981776a21b916f18e2b

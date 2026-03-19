@@ -1,7 +1,6 @@
 from fastapi import FastAPI,Query
 from typing import Annotated
 import redis
-from models import User, UserQuery
 r = redis.Redis(host='localhost', port=6379, db=0)
 import time
 lua_script = """
